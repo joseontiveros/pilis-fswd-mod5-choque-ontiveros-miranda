@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -11,12 +11,13 @@ import { styles } from "./LocationListScreen.styles";
 // import { data } from '../../api/data'
 import { SearchBar } from "../../components/search-bar/SearchBar";
 import { getLocationList } from "../../api/location.service";
+import { UserContext } from "../../contexts/UserContext";
 
 export const LocationListScreen = ({ navigation }) => {
   //dentro del estado voy a guardar el input del usuario
   const [searchQuery, setSearchQuery] = useState("");
   const [locationList, setLocationList] = useState([]);
-
+  const { currentUser } = useContext(UserContext);
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
@@ -40,12 +41,15 @@ export const LocationListScreen = ({ navigation }) => {
   const location = ({ item }) => (
     <Pressable onPress={() => navigation.navigate("LocationDetail", { item })}>
       <View style={styles.itemContainer}>
-        <Image
-          source={{ uri: `https://drive.google.com/uc?id=${item.images[0]}` }}
-          style={styles.itemImage}
-        />
-        <Text style={styles.itemTitle}>{item.title}</Text>
-        <Text style={styles.itemPrice}>{item.price}</Text>
+        {currentUser && (
+          <Image
+            source={{
+              uri: `https://drive.google.com/uc?id=${item.images[0]}`,
+            }}
+            style={styles.itemImage}
+          />
+        )}
+        {currentUser && <Text style={styles.itemTitle}>{item.title}</Text>}
       </View>
     </Pressable>
   );

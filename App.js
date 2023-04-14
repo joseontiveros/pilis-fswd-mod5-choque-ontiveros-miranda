@@ -16,7 +16,7 @@ export default function App() {
           <LocationListStack.Navigator screenOptions={{ headerShown: false }}>
             {/* //Pantallas con Tab bar */}
             <LocationListStack.Screen name="Main" component={MainStackScreen} />
-            {/* //Pantallas sin Tab barrrrrrrr */}
+            {/* //Pantallas sin Tab bar */}
             <LocationListStack.Screen
               name="LocationDetail"
               component={LocationDetailScreen}
