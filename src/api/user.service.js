@@ -1,5 +1,4 @@
 import { api } from "./api";
-//armo el endpoint
 const SERVICE_ENDPOINT = `${api.server + api.apiVersion}/users`;
 
 export const getUsers = async () => {

@@ -1,31 +1,31 @@
 import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
-import { MainStackScreen } from "./src/screens/location-list/MainStackScreen";
+import { MainStackScreen } from "./src/screens/events-list/MainStackScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { LocationDetailScreen } from "./src/screens/location-detail/LocationDetailScreen";
-import { LocationDetailWebScreen } from "./src/screens/location-detail/LocationDetailWebScreen";
+import { EventsDetailScreen } from "./src/screens/events-detail/EventsDetailScreen";
+import { EventsDetailWebScreen } from "./src/screens/events-detail/EventsDetailWebScreen";
 import { UserProvider } from "./src/contexts/UserContext";
 
-const LocationListStack = createNativeStackNavigator();
+const EventsListStack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <>
       <UserProvider>
         <NavigationContainer>
-          <LocationListStack.Navigator screenOptions={{ headerShown: false }}>
+          <EventsListStack.Navigator screenOptions={{ headerShown: false }}>
             {/* //Pantallas con Tab bar */}
-            <LocationListStack.Screen name="Main" component={MainStackScreen} />
+            <EventsListStack.Screen name="Main" component={MainStackScreen} />
             {/* //Pantallas sin Tab bar */}
-            <LocationListStack.Screen
-              name="LocationDetail"
-              component={LocationDetailScreen}
+            <EventsListStack.Screen
+              name="EventsDetail"
+              component={EventsDetailScreen}
             />
-            <LocationListStack.Screen
-              name="LocationDetailWeb"
-              component={LocationDetailWebScreen}
+            <EventsListStack.Screen
+              name="EventsDetailWeb"
+              component={EventsDetailWebScreen}
             />
-          </LocationListStack.Navigator>
+          </EventsListStack.Navigator>
         </NavigationContainer>
       </UserProvider>
 

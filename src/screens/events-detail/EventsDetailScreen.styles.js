@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
   },
-  location: {
+  Events: {
     fontSize: 18,
     color: "#444",
     marginBottom: 5,

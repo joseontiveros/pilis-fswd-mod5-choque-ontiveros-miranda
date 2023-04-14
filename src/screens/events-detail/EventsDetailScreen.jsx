@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { View, ScrollView, Image, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
-import { styles } from "./LocationDetailScreen.styles";
+import { styles } from "./EventsDetailScreen.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../utils/theme";
 import { Link } from "@react-navigation/native";
 import { UserContext } from "../../contexts/UserContext";
 
-export const LocationDetailScreen = ({ route }) => {
+export const EventsDetailScreen = ({ route }) => {
   const { item } = route.params;
   const { currentUser } = useContext(UserContext);
 
@@ -28,13 +28,13 @@ export const LocationDetailScreen = ({ route }) => {
 
       <View style={styles.textContainer}>
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.location}>{item.location}</Text>
+        <Text style={styles.Events}>{item.Events}</Text>
         <Text style={styles.date}>{item.date}</Text>
         <Text style={styles.hour}>{item.hour}</Text>
         {currentUser && (
           <Link
             style={styles.webButton}
-            to={{ screen: "LocationDetailWeb", params: { url: item.url } }}
+            to={{ screen: "EventsDetailWeb", params: { url: item.url } }}
           >
             Ir a la web
           </Link>

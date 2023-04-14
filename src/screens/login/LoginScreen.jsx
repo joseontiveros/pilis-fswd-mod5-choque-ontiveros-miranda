@@ -22,9 +22,7 @@ export const LoginScreen = () => {
     },
   });
 
-  //aca llega el usuario y la contraseña ingresada
   const handleLogin = ({ username, password }) => {
-    //se pide a la api estos datos
     getUsers()
       .then((users) => {
         const user = users[0];
@@ -48,7 +46,6 @@ export const LoginScreen = () => {
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
-            //es evita que la primera letra se ponga en mayuscula
             autoCapitalize="none"
           />
         )}
@@ -67,7 +64,6 @@ export const LoginScreen = () => {
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
-            //es para ocultar la contraseña
             secureTextEntry
           />
         )}

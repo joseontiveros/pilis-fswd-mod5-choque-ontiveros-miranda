@@ -6,15 +6,5 @@ import { LoginScreen } from "../login/LoginScreen";
 export const ProfileScreen = () => {
   const { currentUser } = useContext(UserContext);
 
-  return (
-    <>
-      {currentUser ? (
-        //si existe un usuario logueado se devuelve userinfoscrenn
-        <UserInfoScreen />
-      ) : (
-        //sino
-        <LoginScreen />
-      )}
-    </>
-  );
+  return <>{currentUser ? <UserInfoScreen /> : <LoginScreen />}</>;
 };
