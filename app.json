@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "airbnb-clone",
-    "slug": "airbnb-clone",
+    "name": "tf-mod5",
+    "slug": "tf-mod5",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,21 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.josedaniel2023.tfmod5",
+      "config":{
+          "googleMaps": {
+           "apiKey": "AIzaSyDsLIPvjU3aBCUGlNmFDcH1woBuE7mn5I8"
+        }
+       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e1e9592c-bc04-40e8-be37-cb64a5a663a5"
+      }
     }
   }
 }

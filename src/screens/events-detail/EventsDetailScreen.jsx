@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { View, ScrollView, Image, Text } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { styles } from "./EventsDetailScreen.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../utils/theme";
@@ -42,6 +42,7 @@ export const EventsDetailScreen = ({ route }) => {
         <Text style={styles.description}>{item.description}</Text>
       </View>
       <MapView
+        provider={PROVIDER_GOOGLE}
         style={styles.map}
         initialRegion={{
           latitude: item.locationCoordinates.latitude,
