@@ -25,10 +25,15 @@ export const LoginScreen = () => {
   const handleLogin = ({ username, password }) => {
     getUsers()
       .then((users) => {
-        const user = users[0];
-        if (username === user.username && password === user.password) {
-          setCurrentUser({ username, password });
-          navigation.navigate("Home");
+        {
+          users.map((user) => {
+            if (username === user.username && password === user.password) {
+              const avatar = user.avatar;
+              const about = user.about;
+              setCurrentUser({ username, password, avatar, about });
+              navigation.navigate("Home");
+            }
+          });
         }
       })
       .catch((err) => console.warn(err));
