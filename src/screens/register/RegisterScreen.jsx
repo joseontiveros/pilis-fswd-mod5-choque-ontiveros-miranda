@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
+import { postUser } from "../../api/user.service";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigation, Link } from "@react-navigation/native";
 import { ScrollView } from "react-native";
@@ -34,9 +35,18 @@ export const RegisterScreen = ({ navigation }) => {
   });
 
   const handleRegister = (data) => {
-    console.log(data);
-    console.log("Hola desde handle Register");
-    navigation.navigate("Home");
+    if (data.password !== data.confirmPassword) {
+      clearErrors();
+      setError('password', {message: 'Las contraseñas no coinciden'});
+      setError('confirmPassword', {message: 'Las contraseñas no coinciden'});
+      return;
+    }
+    postUser(data)
+      .then((user) => {
+        console.log(user);
+        navigation.navigate("Home");
+      })
+      .catch((err) => console.warn(err));
   };
 
   const toLogin = () => {
@@ -134,7 +144,6 @@ export const RegisterScreen = ({ navigation }) => {
             />
           )}
           name="interests"
-          // rules={{ required: "Rep" }}
         />
         <Controller
           control={control}

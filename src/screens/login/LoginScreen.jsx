@@ -38,7 +38,9 @@ export const LoginScreen = ({ navigation }) => {
         // const user = users[0];
         users.forEach((user) => {
           if (username === user.username && password === user.password) {
-            setCurrentUser({ username, password });
+            console.log(user);
+            setCurrentUser(user);
+            // setCurrentUser({ username, password });
             navigation.navigate("Home");
             resetField('username');
             resetField('password');
