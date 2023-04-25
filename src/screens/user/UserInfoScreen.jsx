@@ -17,8 +17,11 @@ export const UserInfoScreen = ({ setError }) => {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image
+          source={{
+            uri: `https://drive.google.com/uc?id=${currentUser.avatar}`,
+          }}
           style={styles.profileImage}
-          source={require("../../../assets/images/avatar.png")}
+          resizeMode="cover"
         />
         <View style={styles.profileInfo}>
           <Text style={styles.profileName}>{currentUser.username}</Text>
@@ -30,11 +33,7 @@ export const UserInfoScreen = ({ setError }) => {
       </View>
       <View style={styles.content}>
         <Text style={styles.sectionTitle}>About Me</Text>
-        <Text style={styles.sectionText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus
-          eu nisi tincidunt ultrices. Morbi id dictum ipsum. Nunc nec lacus
-          massa. Integer eget elit non elit sodales maximus.
-        </Text>
+        <Text style={styles.sectionText}>{currentUser.about}</Text>
         <Text style={styles.sectionTitle}>Interests</Text>
         <Text style={styles.sectionText}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus
