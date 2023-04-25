@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { styles } from "./UserInfoScreen.styles";
 import { UserContext } from "../../contexts/UserContext";
+import { useNavigation, Link } from "@react-navigation/native";
 
-export const UserInfoScreen = () => {
+
+export const UserInfoScreen = ({ setError }) => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   const handleLogout = () => {
     setCurrentUser(null);
+    setError(null);
   };
 
   return (
