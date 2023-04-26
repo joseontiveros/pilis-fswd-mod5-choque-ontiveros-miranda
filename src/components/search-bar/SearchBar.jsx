@@ -6,7 +6,7 @@ import { COLORS } from "../../utils/theme";
 export const SearchBar = ({ handleSearch, searchQuery }) => {
   return (
     <View style={styles.searchContainer}>
-      <Ionicons name="search" size={20} color={COLORS.primary} />
+      <Ionicons name="search" size={20} color={COLORS.darkblue} />
       <TextInput
         placeholder="¿A dónde quieres ir?"
         style={styles.searchInput}

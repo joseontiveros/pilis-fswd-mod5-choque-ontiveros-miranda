@@ -8,10 +8,16 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: StatusBar.currentHeight
   },
+  textMesagge: {
+    color: COLORS.inactive,
+    fontSize: 14,
+    marginBottom: 20
+  },
   title: {
     fontSize: 24,
+    color: COLORS.darkblue,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 5,
     textAlign: 'center'
   },
   input: {
@@ -27,16 +33,21 @@ export const styles = StyleSheet.create({
     marginBottom: 8
   },
   button: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkblue,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 20,
-    marginTop: 8,
+    marginTop: 30,
     alignItems: 'center'
   },
   buttonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold'
+  },
+  linkContainer: {
+    marginTop: 30,
+    justifyContent: 'center',
+    flexDirection: 'row'
   }
 })

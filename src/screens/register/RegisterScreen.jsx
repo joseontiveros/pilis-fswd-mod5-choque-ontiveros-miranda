@@ -11,10 +11,9 @@ import { postUser } from "../../api/user.service";
 import { useForm, Controller } from "react-hook-form";
 import { useNavigation, Link } from "@react-navigation/native";
 import { ScrollView } from "react-native";
+import { COLORS } from "../../utils/theme";
 
 export const RegisterScreen = ({ navigation }) => {
-  // const navigation = useNavigation();
-
   const {
     control,
     handleSubmit,
@@ -57,9 +56,10 @@ export const RegisterScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <ScrollView>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.safeContainer}>
         <Text style={styles.title}>Registro</Text>
+        <Text style={styles.textMesagge}>Ingresa los detalles de tu cuenta</Text>
         <Controller
           control={control}
           render={({ field: { onChange, onBlur, value } }) => (
@@ -187,16 +187,15 @@ export const RegisterScreen = ({ navigation }) => {
         >
           <Text style={styles.buttonText}>Registrar</Text>
         </TouchableOpacity>
-        <View>
+        <View style={styles.linkContainer}>
           <Text>Ya tengo cuenta, ir a</Text>
           <TouchableOpacity
-            // style={styles.button}
             onPress={toLogin}
           >
-            <Text style={styles.errorText}> Iniciar Sesión</Text>
+            <Text style={{ color: COLORS.darkblue }}> Iniciar Sesión</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

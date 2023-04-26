@@ -5,13 +5,22 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.white,
     marginTop: StatusBar.currentHeight
+  },
+  safeContainer: {
+    paddingHorizontal: 10,
+  },
+  textMesagge: {
+    color: COLORS.inactive,
+    fontSize: 14,
+    marginBottom: 20
   },
   title: {
     fontSize: 24,
+    color: COLORS.darkblue,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 5,
     textAlign: 'center'
   },
   input: {
@@ -27,7 +36,7 @@ export const styles = StyleSheet.create({
     marginBottom: 8
   },
   button: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkblue,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 20,
@@ -38,5 +47,10 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold'
+  },
+  linkContainer: {
+    marginTop: 30,
+    justifyContent: 'center',
+    flexDirection: 'row'
   }
 })

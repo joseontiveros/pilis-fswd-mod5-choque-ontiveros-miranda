@@ -34,14 +34,12 @@ export const EventsListScreen = ({ navigation }) => {
   const Events = ({ item }) => (
     <Pressable onPress={() => navigation.navigate("EventsDetail", { item })}>
       <View style={styles.itemContainer}>
-        {currentUser && (
-          <Image
-            source={{
-              uri: `https://drive.google.com/uc?id=${item.images[0]}`,
-            }}
-            style={styles.itemImage}
-          />
-        )}
+        <Image
+          source={{
+            uri: `https://drive.google.com/uc?id=${item.images[0]}`,
+          }}
+          style={styles.itemImage}
+        />
         {currentUser && <Text style={styles.itemTitle}>{item.title}</Text>}
       </View>
     </Pressable>
