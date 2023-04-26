@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
   },
   button: {
     justifyContent: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkblue,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 20,

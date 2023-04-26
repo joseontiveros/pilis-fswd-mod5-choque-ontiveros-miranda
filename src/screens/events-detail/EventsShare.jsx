@@ -1,5 +1,5 @@
 import React from "react";
-import { Share, View, Button, Text } from "react-native";
+import { Share, View, Button, Text, Alert } from "react-native";
 export const EventsShare = ({ route }) => {
   const { url } = route.params;
   const shareData = async () => {
@@ -8,14 +8,14 @@ export const EventsShare = ({ route }) => {
         message: url,
       });
     } catch (error) {
-      alert(error.message);
+      Alert(error.message);
     }
   };
 
   return (
     <View style={{ marginTop: 80 }}>
       <Text style={{ fontSize: 18 }}></Text>
-      <Button onPress={shareData} title="Share" />
+      <Button onPress={shareData} title="Compartir" />
     </View>
   );
 };

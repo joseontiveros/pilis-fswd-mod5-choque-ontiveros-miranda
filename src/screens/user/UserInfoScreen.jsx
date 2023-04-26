@@ -31,9 +31,9 @@ export const UserInfoScreen = ({ setError }) => {
         </TouchableOpacity>
       </View>
       <View style={styles.content}>
-        <Text style={styles.sectionTitle}>About Me</Text>
+        <Text style={styles.sectionTitle}>Sobre mí</Text>
         <Text style={styles.sectionText}>{currentUser.about}</Text>
-        <Text style={styles.sectionTitle}>Interests</Text>
+        <Text style={styles.sectionTitle}>Intereses</Text>
         <Text style={styles.sectionText}>{currentUser.interests}</Text>
       </View>
     </ScrollView>

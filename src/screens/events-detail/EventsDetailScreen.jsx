@@ -31,23 +31,24 @@ export const EventsDetailScreen = ({ route }) => {
         <Text style={styles.Events}>{item.Events}</Text>
         <Text style={styles.date}>{item.date}</Text>
         <Text style={styles.hour}>{item.hour}</Text>
-        {currentUser && (
-          <Link
-            style={styles.webButton}
-            to={{ screen: "EventsDetailWeb", params: { url: item.url } }}
-          >
-            Ir a la web
-          </Link>
-        )}
-
-        {currentUser && (
-          <Link
-            style={styles.webButton}
-            to={{ screen: "EventsShare", params: { url: item.url } }}
-          >
-            Compartir
-          </Link>
-        )}
+        <View style={styles.linkContainer}>
+          {currentUser && (
+            <Link
+              style={styles.webButton}
+              to={{ screen: "EventsDetailWeb", params: { url: item.url } }}
+            >
+              Ir a la web
+            </Link>
+          )}
+          {currentUser && (
+            <Link
+              style={styles.webButton}
+              to={{ screen: "EventsShare", params: { url: item.url } }}
+            >
+              Compartir
+            </Link>
+          )}
+        </View>
         <Text style={styles.description}>{item.description}</Text>
       </View>
       <MapView

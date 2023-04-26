@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10,
+    // marginBottom: 0,
   },
   Events: {
     fontSize: 18,
@@ -52,14 +52,18 @@ export const styles = StyleSheet.create({
     marginVertical: 20,
     borderRadius: 10,
   },
+  linkContainer: {
+    flexDirection: 'row'
+  },
   webButton: {
     textAlign: "center",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.darkblue,
     color: COLORS.white,
     borderRadius: 20,
     paddingHorizontal: 10,
     paddingVertical: 8,
     width: 100,
     marginTop: 10,
+    marginHorizontal: 10
   },
 });
