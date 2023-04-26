@@ -6,6 +6,7 @@ import { getUsers } from "../../api/user.service";
 import { UserContext } from "../../contexts/UserContext";
 import { useNavigation, Link } from "@react-navigation/native";
 import { UserInfoScreen } from "../user/UserInfoScreen";
+import { COLORS } from "../../utils/theme";
 
 const ERROR_MESSAGE = "Usuario o Contraseña Incorrectos, Intentalo de nuevo";
 
@@ -75,6 +76,7 @@ export const LoginScreen = ({ navigation }) => {
       ) : (
         <View style={styles.container}>
           <Text style={styles.title}>Inicio de Sesión</Text>
+          <Text style={styles.textMesagge}>Bienvenido! Inicia sesión con tu cuenta para continuar</Text>
           <Controller
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
@@ -120,13 +122,12 @@ export const LoginScreen = ({ navigation }) => {
           >
             <Text style={styles.buttonText}>Entrar</Text>
           </TouchableOpacity>
-          <View>
-            <Text>No tengo cuenta,</Text>
+          <View style={styles.linkContainer}>
+            <Text>No tengo cuenta, ir a </Text>
             <TouchableOpacity
-              // style={styles.button}
               onPress={toRegister}
             >
-              <Text style={styles.errorText}>Registrarme</Text>
+              <Text style={{ color: COLORS.darkblue }}>Registrarme</Text>
             </TouchableOpacity>
           </View>
         </View>

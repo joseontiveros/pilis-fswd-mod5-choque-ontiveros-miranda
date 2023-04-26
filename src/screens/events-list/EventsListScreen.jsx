@@ -40,7 +40,7 @@ export const EventsListScreen = ({ navigation }) => {
           }}
           style={styles.itemImage}
         />
-        {currentUser && <Text style={styles.itemTitle}>{item.title}</Text>}
+        <Text style={styles.itemTitle}>{item.title}</Text>
       </View>
     </Pressable>
   );
