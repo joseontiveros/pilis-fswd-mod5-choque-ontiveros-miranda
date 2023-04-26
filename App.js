@@ -4,6 +4,7 @@ import { MainStackScreen } from "./src/screens/events-list/MainStackScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { EventsDetailScreen } from "./src/screens/events-detail/EventsDetailScreen";
 import { EventsDetailWebScreen } from "./src/screens/events-detail/EventsDetailWebScreen";
+import { EventsShare } from "./src/screens/events-detail/EventsShare";
 import { LoginScreen } from "./src/screens/login/LoginScreen";
 import { RegisterScreen } from "./src/screens/register/RegisterScreen";
 
@@ -27,6 +28,10 @@ export default function App() {
             <EventsListStack.Screen
               name="EventsDetailWeb"
               component={EventsDetailWebScreen}
+            />
+            <EventsListStack.Screen
+              name="EventsShare"
+              component={EventsShare}
             />
           </EventsListStack.Navigator>
         </NavigationContainer>

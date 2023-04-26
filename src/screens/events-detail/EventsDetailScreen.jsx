@@ -39,6 +39,15 @@ export const EventsDetailScreen = ({ route }) => {
             Ir a la web
           </Link>
         )}
+
+        {currentUser && (
+          <Link
+            style={styles.webButton}
+            to={{ screen: "EventsShare", params: { url: item.url } }}
+          >
+            Compartir
+          </Link>
+        )}
         <Text style={styles.description}>{item.description}</Text>
       </View>
       <MapView
