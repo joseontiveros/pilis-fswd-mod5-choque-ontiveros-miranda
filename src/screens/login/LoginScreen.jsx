@@ -4,14 +4,12 @@ import { styles } from "./LoginScreen.styles";
 import { useForm, Controller } from "react-hook-form";
 import { getUsers } from "../../api/user.service";
 import { UserContext } from "../../contexts/UserContext";
-import { useNavigation, Link } from "@react-navigation/native";
 import { UserInfoScreen } from "../user/UserInfoScreen";
 import { COLORS } from "../../utils/theme";
 
 const ERROR_MESSAGE = "Usuario o Contraseña Incorrectos, Intentalo de nuevo";
 
 export const LoginScreen = ({ navigation }) => {
-  // const navigation = useNavigation();
   const [error, setError] = useState(null);
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const {
@@ -27,16 +25,13 @@ export const LoginScreen = ({ navigation }) => {
     },
   });
   const values = watch(["username", "password"]);
-  // const isDisabled = values[1].length < 1;
   const isDisabled = values[0].length < 1 || values[1].length < 1;
 
   const handleLogin = ({ username, password }) => {
     getUsers()
       .then((users) => {
-        //users.map((user) => {
         users.forEach((user) => {
           if (username === user.username && password === user.password) {
-            // console.log(user);
             const avatar = user.avatar;
             const about = user.about;
             const interests = user.interests;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { styles } from "./RegisterScreen.styles";
 import {
   View,
@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { postUser } from "../../api/user.service";
 import { useForm, Controller } from "react-hook-form";
-import { useNavigation, Link } from "@react-navigation/native";
 import { ScrollView } from "react-native";
 import { COLORS } from "../../utils/theme";
 
@@ -124,11 +123,9 @@ export const RegisterScreen = ({ navigation }) => {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              secureTextEntry
             />
           )}
           name="about"
-          // rules={{ required: "Rep" }}
         />
         <Controller
           control={control}
@@ -140,7 +137,6 @@ export const RegisterScreen = ({ navigation }) => {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              secureTextEntry
             />
           )}
           name="interests"
@@ -154,7 +150,6 @@ export const RegisterScreen = ({ navigation }) => {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              secureTextEntry
             />
           )}
           name="date"
@@ -172,7 +167,6 @@ export const RegisterScreen = ({ navigation }) => {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
-              secureTextEntry
             />
           )}
           name="location"

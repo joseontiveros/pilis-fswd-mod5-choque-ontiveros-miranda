@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -10,12 +10,10 @@ import {
 import { styles } from "./EventsListScreen.styles";
 import { SearchBar } from "../../components/search-bar/SearchBar";
 import { getEventsList } from "../../api/events.service";
-import { UserContext } from "../../contexts/UserContext";
 
 export const EventsListScreen = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [EventsList, setEventsList] = useState([]);
-  const { currentUser } = useContext(UserContext);
   const handleSearch = (query) => {
     setSearchQuery(query);
   };

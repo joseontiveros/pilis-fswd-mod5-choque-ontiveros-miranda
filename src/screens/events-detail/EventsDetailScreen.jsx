@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { View, ScrollView, Image, Text } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { styles } from "./EventsDetailScreen.styles";
-import { Ionicons } from "@expo/vector-icons";
-import { COLORS } from "../../utils/theme";
 import { Link } from "@react-navigation/native";
 import { UserContext } from "../../contexts/UserContext";
 

@@ -1,6 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../contexts/UserContext";
-import { UserInfoScreen } from "../user/UserInfoScreen";
+import React from "react";
 import { LoginScreen } from "../login/LoginScreen";
 import { RegisterScreen } from "../register/RegisterScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -22,12 +20,3 @@ export const ProfileScreen = ({ route }) => {
     </Stack.Navigator>
   );
 };
-
-// export const ProfileScreen = ({ route }) => {
-//   const { currentUser } = useContext(UserContext);
-//   return (
-//     <>{currentUser
-//       ? <UserInfoScreen />
-//       : <LoginScreen />}
-//     </>
-// )};
