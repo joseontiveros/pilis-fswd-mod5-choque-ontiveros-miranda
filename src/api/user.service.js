@@ -9,15 +9,16 @@ export const getUsers = async () => {
     throw new Error("could not fetch users");
   }
 };
+
 export const postUser = async (data) => {
   try {
     const config = {
-      method: "Post",
+      method: 'Post',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
-    };
+      body: JSON.stringify(data)
+    }
     const response = await fetch(SERVICE_ENDPOINT, config);
     return response.json();
   } catch {

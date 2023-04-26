@@ -4,6 +4,9 @@ import { MainStackScreen } from "./src/screens/events-list/MainStackScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { EventsDetailScreen } from "./src/screens/events-detail/EventsDetailScreen";
 import { EventsDetailWebScreen } from "./src/screens/events-detail/EventsDetailWebScreen";
+import { LoginScreen } from "./src/screens/login/LoginScreen";
+import { RegisterScreen } from "./src/screens/register/RegisterScreen";
+
 import { UserProvider } from "./src/contexts/UserContext";
 
 const EventsListStack = createNativeStackNavigator();
