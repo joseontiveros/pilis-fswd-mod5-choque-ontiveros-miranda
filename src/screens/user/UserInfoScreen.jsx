@@ -3,11 +3,12 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import { styles } from "./UserInfoScreen.styles";
 import { UserContext } from "../../contexts/UserContext";
 
-export const UserInfoScreen = () => {
+export const UserInfoScreen = ({ setError }) => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   const handleLogout = () => {
     setCurrentUser(null);
+    setError(null);
   };
 
   return (
@@ -15,14 +16,15 @@ export const UserInfoScreen = () => {
       <View style={styles.header}>
         <Image
           source={{
-            uri: `https://drive.google.com/uc?id=${currentUser.avatar}`,
+            uri: `${currentUser.avatar}`,
           }}
           style={styles.profileImage}
           resizeMode="cover"
         />
         <View style={styles.profileInfo}>
           <Text style={styles.profileName}>{currentUser.username}</Text>
-          <Text style={styles.profileEvents}>Jujuy, Argentina</Text>
+          <Text style={styles.profileEvents}>{currentUser.location}</Text>
+          <Text style={styles.profileEvents}>- {currentUser.date} -</Text>
         </View>
         <TouchableOpacity style={styles.button} onPress={handleLogout}>
           <Text style={styles.buttonText}>Salir</Text>
@@ -32,11 +34,7 @@ export const UserInfoScreen = () => {
         <Text style={styles.sectionTitle}>About Me</Text>
         <Text style={styles.sectionText}>{currentUser.about}</Text>
         <Text style={styles.sectionTitle}>Interests</Text>
-        <Text style={styles.sectionText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tellus
-          eu nisi tincidunt ultrices. Morbi id dictum ipsum. Nunc nec lacus
-          massa. Integer eget elit non elit sodales maximus.
-        </Text>
+        <Text style={styles.sectionText}>{currentUser.interests}</Text>
       </View>
     </ScrollView>
   );

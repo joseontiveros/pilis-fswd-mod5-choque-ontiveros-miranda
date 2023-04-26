@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
   profileName: {
     fontSize: 24,
     fontWeight: "bold",
+    textTransform: "capitalize",
   },
   profileEvents: {
     fontSize: 16,
